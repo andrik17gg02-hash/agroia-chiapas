@@ -6,6 +6,9 @@ from src.api.auth import router as auth_router
 from src.api.negocio import router as negocio_router
 from src.api.protegido import router as protegido_router
 from src.api.marketplace import router as marketplace_router
+from src.db.database import Base, engine
+
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI(
     title="AgroIA Chiapas",
